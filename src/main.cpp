@@ -106,16 +106,16 @@ int main()
     	  ground_truth.push_back(gt_values);
           
           //Call ProcessMeasurment(meas_package) for Kalman filter
-    	  fusionEKF.ProcessMeasurement(meas_package);    	  
+    	  fusionEKF.ProcessKalmanFilterFlow(meas_package);    	  
 
     	  //Push the current estimated x,y positon from the Kalman filter's state vector
 
     	  VectorXd estimate(4);
 
-    	  double p_x = fusionEKF.ekf_.x_(0);
-    	  double p_y = fusionEKF.ekf_.x_(1);
-    	  double v1  = fusionEKF.ekf_.x_(2);
-    	  double v2 = fusionEKF.ekf_.x_(3);
+    	  double p_x = fusionEKF.kalman_filter_.x_(0);
+    	  double p_y = fusionEKF.kalman_filter_.x_(1);
+    	  double v1  = fusionEKF.kalman_filter_.x_(2);
+    	  double v2 = fusionEKF.kalman_filter_.x_(3);
 
     	  estimate(0) = p_x;
     	  estimate(1) = p_y;

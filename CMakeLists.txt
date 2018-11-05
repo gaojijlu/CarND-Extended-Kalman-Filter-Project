@@ -1,4 +1,4 @@
-project(ExtendedKF)
+project(ExtendedKF_By_Gao_Ji)
 
 cmake_minimum_required (VERSION 3.5)
 
